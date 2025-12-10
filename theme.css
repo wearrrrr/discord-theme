@@ -1,0 +1,363 @@
+/**
+ * @name wearr-theme
+ * @author _wearr_
+ * @version 0.1
+ * @description it's the theme woaw
+ * @source https://github.com/wearrrrr/discord-theme
+ */
+
+:root {
+    --font-primary: "Noto Sans", sans-serif !important;
+    --font-display: "Noto Sans", sans-serif !important;
+    --font-code: "Noto Sans Mono", monospace;
+
+    /* Configuration */
+    /*  --enable-gift-button: flex; */
+    /*  --enable-app-launcher-button: flex; */
+    /*  --enable-store-button: flex; */
+    --enable-shop-button: flex;
+    --enable-quests-button: flex;
+
+    --image-url: url(https://konachan.net/sample/ba45ce6b263d5ac7722b4774839b69e4/Konachan.com%20-%20319293%20sample.jpg);
+    --bg-transparency: rgb(0, 0, 0, 0.8);
+    --fg-transparency: rgb(0, 0, 0, 0.3);
+    --msg-transparency: rgb(0, 0, 0, 0.1);
+}
+
+[class*="Gradient"] {
+    display: none;
+}
+
+div[aria-label="Send a gift"] {
+    display: var(--enable-gift-button, none);
+}
+
+div[aria-label="Apps"] {
+    display: var(--enable-app-launcher-button, none);
+}
+
+[class*="typing_"] {
+    background-color: var(--msg-transparency);
+    backdrop-filter: blur(8px);
+    border-top-left-radius: var(--radius-md);
+    border-top-right-radius: var(--radius-md);
+    border: 1px solid var(--border-faint);
+    border-bottom: 0px;
+}
+
+[class*="channelTextArea_"] {
+    background: var(--msg-transparency);
+    backdrop-filter: blur(8px);
+}
+
+[class*="form_"]:has([class*="typing_"]) [class*="channelTextArea_"] {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-top: 0px;
+}
+
+[class*="autocomplete"] {
+    background: transparent;
+    backdrop-filter: blur(12px) !important;
+    [class*="autocompleteInner__"] {
+        background: transparent;
+        [class*="scroller"] {
+            background-color: var(--bg-transparency);
+        }
+    }
+}
+
+.visual-refresh [class*="form_"] {
+    margin: 0px 4px 0px 1px;
+    padding: 0;
+    --chatbar-border-color: var(--border-faint);
+}
+
+ul[class*="content_"] {
+    li > div > a[href="/store"] {
+        display: var(--enable-store-button, none);
+    }
+    li > div > a[href="/shop"] {
+        display: var(--enable-shop-button, none);
+    }
+    li > div > a[href="/quest-home"] {
+        display: var(--enable-quests-button, none);
+    }
+}
+
+/*
+    All the things that need to only be transparent
+
+    Not a great thing to do, but it works.
+*/
+[class*="shop__"],
+[class*="privateChannels_"],
+[class*="privateChannels_"] > [class*="scroller__"],
+[class*="stackedBars__"],
+[class*="guilds__"],
+[class^="sidebar__"]:after,
+[class*="themed__"],
+[class*="themedBackground__"],
+[class*="footer__"],
+nav[class*="container__"],
+.children__9293f:after,
+.tabBody__133bf,
+.container__133bf,
+.member_c8ffbb,
+.nowPlayingColumn__133bf,
+.container__7d20c,
+.wrapper_d852db,
+.wrapper_fc8177,
+.standardSidebarView__23e6b,
+.sidebarRegionScroller__23e6b,
+.wrapper_cb9592,
+[class*="divider__"] > span {
+    background: transparent !important;
+}
+
+[class*="shopViewWrapper__"] > div > main {
+    background: transparent;
+    div {
+        background: transparent;
+    }
+}
+
+.card_f215b9, [class*="root_"] {
+    background: transparent !important;
+    backdrop-filter: blur(8px) brightness(80%);
+}
+
+div[class*="buttonsInner__"] {
+    background: var(--fg-transparency);
+}
+
+[class*="outer_"] {
+    background: var(--bg-transparency);
+    backdrop-filter: blur(5px);
+}
+
+[class*="itemCard__"] {
+    background: transparent;
+    transition: 150ms ease;
+
+    &:hover {
+        background: var(--fg-transparency) !important;
+    }
+}
+
+div[role="tooltip"] {
+    border-radius: var(--radius-md);
+    span[class*="inner"] {
+        background: #151515;
+    }
+}
+
+div[aria-label="Game Collection"] {
+    background: transparent;
+    [class*="overlay"] {
+        background: transparent;
+    }
+
+}
+
+[class*="root__"] {
+    background: transparent !important;
+    backdrop-filter: blur(5px);
+
+    [class^="outer_"] {
+        background: transparent !important;
+
+        [class^="container"] {
+            background: transparent !important;
+        }
+
+        [class^="profile__"] {
+            background: var(--fg-transparency);
+        }
+    }
+}
+
+aside > [class*="outer_"] {
+    background: transparent;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--app-border-frame);
+}
+
+[class^="applicationStore"] {
+    div {
+        background: transparent;
+    }
+    background: transparent;
+}
+
+[class^="app__"] {
+    background: transparent;
+    background-image: var(--image-url);
+    background-size: cover;
+}
+
+[class^="bg__"] {
+    background: var(--bg-transparency);
+}
+
+/* User info panel */
+[class^="panels_"] {
+    background: transparent;
+    backdrop-filter: blur(8px) brightness(80%);
+}
+
+[class*="chat"] {
+    background: transparent !important;
+
+    [class*="container_"]:has([class*="membersWrap_"]) {
+        background: transparent !important;
+        border: 1px solid var(--border-subtle);
+        border-right: 0px;
+        border-radius: var(--radius-md);
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        height: 97%;
+        margin-top: 1%;
+        backdrop-filter: blur(8px) brightness(80%);
+    }
+
+    [class*="members_"] {
+        background: transparent !important;
+    }
+}
+
+.wrapper_ef3116 {
+    width: var(--server-listing-width);
+}
+
+.scrollerWrap-1IAIlv {
+    width: calc(var(--server-listing-width) + 6px);
+}
+
+.wrapper_ef3116 .scroller_ef3116 {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 0;
+    align-content: flex-start;
+}
+
+.tutorialContainer__1f388
+    .wrapper_cc5dd2
+    .wrapper__6e9f8
+    .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
+    background-color: var(--fg-transparency);
+    backdrop-filter: brightness(20%);
+}
+
+.wrapper_ef3116 .scroller_ef3116 {
+    justify-content: center;
+}
+
+#channel-attach {
+    background: var(--bg-transparency);
+    backdrop-filter: blur(8px);
+}
+
+[class*="channelAttachmentArea_"] {
+    background-color: transparent !important;
+}
+
+[class*="upload_"] {
+    background-color: transparent !important;
+}
+
+.embedFull__623de {
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+}
+
+.textContainer__4d95d {
+    backdrop-filter: blur(15px) !important;
+}
+
+.container__0f2e8 {
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+}
+
+/* Inbox */
+[class*="recentMentionsPopout__"] {
+    [class*="header_"]:not([aria-labelledby]) {
+        background-color: var(--fg-transparency) !important;
+    }
+    [class*="channel"] {
+        background: transparent;
+    }
+    [class^="container"] {
+        background: transparent !important;
+    }
+    [class*="channelHeader"] {
+        background-color: transparent !important;
+        position: relative;
+    }
+    [class^="messageContainer"],
+    [class*="messages__"] {
+        background: transparent;
+    }
+    background-color: var(--fg-transparency) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 0px;
+    box-shadow: none;
+}
+/* End of Inbox  */
+
+/* Top Bar */
+.visual-refresh {
+    --custom-app-top-bar-height: 10px !important;
+}
+
+[class*="bar_"] > [class*="title_"] {
+    display: none
+}
+
+div[class^="sidebar_"]
+    > nav[class^="wrapper_"]
+    > ul[class^="tree_"]
+    > div[class^="itemsContainer_"]
+    > div[class^="stack_"] {
+    padding-top: 12px !important;
+}
+
+[class*="sidebarList"] {
+    border-right: 2px solid var(--border-faint);
+    margin-right: 3px;
+}
+
+[class*="base__"] {
+    --toolbar-right: 40px;
+}
+
+[class^="trailing_"] {
+    top: 28px;
+    z-index: 999;
+    left: 5px;
+    a {
+        display: none;
+    }
+    gap: var(--space-4);
+}
+
+div[aria-label="Checkpoint"] {
+    display: none;
+}
+
+[class*="base__"]:has(div[aria-label="Update Ready!"]) {
+    --toolbar-right: 75px;
+}
+
+[class^="toolbar__"] {
+    position: relative;
+    right: var(--toolbar-right);
+}
+
+[class^="topic__"] {
+    margin: 0px 40px 0px 8px !important;
+}
+/* End of Topbar */
