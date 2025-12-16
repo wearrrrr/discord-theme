@@ -24,10 +24,6 @@
     --msg-transparency: rgb(0, 0, 0, 0.1);
 }
 
-[class*="Gradient"] {
-    display: none;
-}
-
 div[aria-label="Send a gift"] {
     display: var(--enable-gift-button, none);
 }
@@ -36,7 +32,11 @@ div[aria-label="Apps"] {
     display: var(--enable-app-launcher-button, none);
 }
 
-[class*="typing_"] {
+h3[class*="-header"] {
+    margin: 0;
+}
+
+[class*="-typing"] {
     background-color: var(--msg-transparency);
     backdrop-filter: blur(8px);
     border-top-left-radius: var(--radius-md);
@@ -45,12 +45,13 @@ div[aria-label="Apps"] {
     border-bottom: 0px;
 }
 
-[class*="channelTextArea_"] {
+[class*="channelTextArea"],
+[class*='-form'] > div {
     background: var(--msg-transparency);
     backdrop-filter: blur(8px);
 }
 
-[class*="form_"]:has([class*="typing_"]) [class*="channelTextArea_"] {
+[class*="-form"]:has([class*="-typing"]) [class*="-channelTextArea"] {
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     border-top: 0px;
@@ -59,7 +60,7 @@ div[aria-label="Apps"] {
 [class*="autocomplete"] {
     background: transparent;
     backdrop-filter: blur(12px) !important;
-    [class*="autocompleteInner__"] {
+    [class*="-autocompleteInner"] {
         background: transparent;
         [class*="scroller"] {
             background-color: var(--bg-transparency);
@@ -67,13 +68,13 @@ div[aria-label="Apps"] {
     }
 }
 
-.visual-refresh [class*="form_"] {
+.visual-refresh [class*="-form"] {
     margin: 0px 4px 0px 1px;
     padding: 0;
     --chatbar-border-color: var(--border-faint);
 }
 
-ul[class*="content_"] {
+ul[class*="-content"] {
     li > div > a[href="/store"] {
         display: var(--enable-store-button, none);
     }
@@ -85,58 +86,55 @@ ul[class*="content_"] {
     }
 }
 
+div[class*="-content"] {
+    [class*="-text"] {
+        max-height: unset !important;
+    }
+}
+
 /*
     All the things that need to only be transparent
 
     Not a great thing to do, but it works.
 */
-[class*="shop__"],
-[class*="privateChannels_"],
-[class*="privateChannels_"] > [class*="scroller__"],
-[class*="stackedBars__"],
-[class*="guilds__"],
-[class^="sidebar__"]:after,
-[class*="themed__"],
-[class*="themedBackground__"],
-[class*="footer__"],
-nav[class*="container__"],
-.children__9293f:after,
-.tabBody__133bf,
-.container__133bf,
-.member_c8ffbb,
-.nowPlayingColumn__133bf,
-.container__7d20c,
-.wrapper_d852db,
-.wrapper_fc8177,
-.standardSidebarView__23e6b,
-.sidebarRegionScroller__23e6b,
-.wrapper_cb9592,
-[class*="divider__"] > span {
+[class*="-shop"],
+[class*="-privateChannels"],
+[class*="-privateChannels"] > [class*="-scroller"],
+[class*="-stackedBars"],
+[class*="-guilds"],
+[class*="-sidebar"]:after,
+[class*="-themed"],
+[class*="-themedBackground"],
+[class*="-footer"],
+nav[class*="-container"],
+[class*='-banner'],
+[class*="-usesCardRows"],
+[class*="-divider"] > span {
     background: transparent !important;
 }
 
-[class*="shopViewWrapper__"] > div > main {
+[class*="-shopViewWrapper"] > div > main {
     background: transparent;
     div {
         background: transparent;
     }
 }
 
-.card_f215b9, [class*="root_"] {
+[class*="-card"], [class*="-root"] {
     background: transparent !important;
     backdrop-filter: blur(8px) brightness(80%);
 }
 
-div[class*="buttonsInner__"] {
+div[class*="-buttonsInner"] {
     background: var(--fg-transparency);
 }
 
-[class*="outer_"] {
+[class*="-outer"] {
     background: var(--bg-transparency);
     backdrop-filter: blur(5px);
 }
 
-[class*="itemCard__"] {
+[class*="-itemCard"] {
     background: transparent;
     transition: 150ms ease;
 
@@ -160,24 +158,24 @@ div[aria-label="Game Collection"] {
 
 }
 
-[class*="root__"] {
+[class*="-root"] {
     background: transparent !important;
     backdrop-filter: blur(5px);
 
-    [class^="outer_"] {
+    [class^="-outer"] {
         background: transparent !important;
 
         [class^="container"] {
             background: transparent !important;
         }
 
-        [class^="profile__"] {
+        [class^="-profile"] {
             background: var(--fg-transparency);
         }
     }
 }
 
-aside > [class*="outer_"] {
+aside > [class*="-outer"] {
     background: transparent;
     backdrop-filter: blur(8px);
     border: 1px solid var(--app-border-frame);
@@ -190,26 +188,29 @@ aside > [class*="outer_"] {
     background: transparent;
 }
 
-[class^="app__"] {
+[class*="-app"] {
     background: transparent;
     background-image: var(--image-url);
     background-size: cover;
 }
 
-[class^="bg__"] {
+[class*="-bg"] {
     background: var(--bg-transparency);
 }
 
+[class*="-lineClamp1"] {
+    margin: 0;
+}
+
 /* User info panel */
-[class^="panels_"] {
+[class*="-panels"] {
     background: transparent;
     backdrop-filter: blur(8px) brightness(80%);
 }
 
 [class*="chat"] {
     background: transparent !important;
-
-    [class*="container_"]:has([class*="membersWrap_"]) {
+    [class*="-container"]:has([class*="-membersWrap"]) {
         background: transparent !important;
         border: 1px solid var(--border-subtle);
         border-right: 0px;
@@ -222,59 +223,59 @@ aside > [class*="outer_"] {
         margin-top: 1%;
         backdrop-filter: blur(8px) brightness(80%);
     }
-
-    [class*="members_"] {
+    [class*="-members"] {        background: transparent !important;
+    }
+    [class*="-member"] {
         background: transparent !important;
+        margin-bottom: 3px;
     }
 }
 
-.wrapper_ef3116 {
+[class*="-wrapper"]:not([class*="-pill"]) {
     width: var(--server-listing-width);
 }
 
-.scrollerWrap-1IAIlv {
+[-actionBar]
+
+[class*="scrollerWrap"] {
     width: calc(var(--server-listing-width) + 6px);
 }
 
-.wrapper_ef3116 .scroller_ef3116 {
+[class*="wrapper"] [class*="scroller"] {
     display: flex;
     flex-flow: row wrap;
     padding-left: 0;
     align-content: flex-start;
 }
 
-.tutorialContainer__1f388
-    .wrapper_cc5dd2
-    .wrapper__6e9f8
-    .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
-    background-color: var(--fg-transparency);
-    backdrop-filter: brightness(20%);
-}
-
+/*
 .wrapper_ef3116 .scroller_ef3116 {
     justify-content: center;
-}
+}*/
 
 #channel-attach {
     background: var(--bg-transparency);
     backdrop-filter: blur(8px);
 }
 
-[class*="channelAttachmentArea_"] {
+[class*="-channelAttachmentArea"] {
     background-color: transparent !important;
 }
 
-[class*="upload_"] {
+[class*="-upload"] {
     background-color: transparent !important;
 }
 
-.embedFull__623de {
+[class*="-actionBar"] {
+    [class*="wrapper"] {
+        background: var(--fg-transparency);
+        backdrop-filter: blur(8px);
+    }
+}
+
+[class*="-embedFull"] {
     background-color: transparent !important;
     backdrop-filter: blur(5px);
-}
-
-.textContainer__4d95d {
-    backdrop-filter: blur(15px) !important;
 }
 
 .container__0f2e8 {
@@ -283,8 +284,8 @@ aside > [class*="outer_"] {
 }
 
 /* Inbox */
-[class*="recentMentionsPopout__"] {
-    [class*="header_"]:not([aria-labelledby]) {
+[class*="-recentMentionsPopout"] {
+    [class*="-header"]:not([aria-labelledby]) {
         background-color: var(--fg-transparency) !important;
     }
     [class*="channel"] {
@@ -297,8 +298,8 @@ aside > [class*="outer_"] {
         background-color: transparent !important;
         position: relative;
     }
-    [class^="messageContainer"],
-    [class*="messages__"] {
+    [class*="-messageContainer"],
+    [class*="-messages"] {
         background: transparent;
     }
     background-color: var(--fg-transparency) !important;
@@ -313,15 +314,15 @@ aside > [class*="outer_"] {
     --custom-app-top-bar-height: 10px !important;
 }
 
-[class*="bar_"] > [class*="title_"] {
+[class*="-bar"] > [class*="-title"] {
     display: none
 }
 
-div[class^="sidebar_"]
-    > nav[class^="wrapper_"]
-    > ul[class^="tree_"]
-    > div[class^="itemsContainer_"]
-    > div[class^="stack_"] {
+div[class*="-sidebar"]
+    > nav[class*="-wrapper"]
+    > ul[class*="-tree"]
+    > div[class*="-itemsContainer"]
+    > div[class*="-stack"] {
     padding-top: 12px !important;
 }
 
@@ -330,12 +331,12 @@ div[class^="sidebar_"]
     margin-right: 3px;
 }
 
-[class*="base__"] {
+[class*="-base"] {
     --toolbar-right: 40px;
 }
 
-[class^="trailing_"] {
-    top: 28px;
+[class*="-trailing"] {
+    top: 29px;
     z-index: 999;
     left: 5px;
     a {
@@ -348,16 +349,16 @@ div[aria-label="Checkpoint"] {
     display: none;
 }
 
-[class*="base__"]:has(div[aria-label="Update Ready!"]) {
+[class*="-base"]:has(div[aria-label="Update Ready!"]) {
     --toolbar-right: 75px;
 }
 
-[class^="toolbar__"] {
+[class*="-toolbar"] {
     position: relative;
     right: var(--toolbar-right);
 }
 
-[class^="topic__"] {
+[class*="-topic"] {
     margin: 0px 40px 0px 8px !important;
 }
 /* End of Topbar */
