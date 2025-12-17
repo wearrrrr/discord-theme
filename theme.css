@@ -231,11 +231,9 @@ aside > [class*="-outer"] {
     }
 }
 
-[class*="-wrapper"]:not([class*="-pill"]) {
+[class*="-wrapper"]:not([class*="-pill"], [class*="-focusedVideo"], [class*="-videoWrapper"]) {
     width: var(--server-listing-width);
 }
-
-[-actionBar]
 
 [class*="scrollerWrap"] {
     width: calc(var(--server-listing-width) + 6px);
@@ -258,6 +256,16 @@ aside > [class*="-outer"] {
     backdrop-filter: blur(8px);
 }
 
+[class*="-noChat"] {
+    [class*="-callContainer"] {
+        background: transparent;
+    }
+    background: transparent;
+}
+
+
+
+/* Chat bar */
 [class*="-channelAttachmentArea"] {
     background-color: transparent !important;
 }
@@ -277,11 +285,7 @@ aside > [class*="-outer"] {
     background-color: transparent !important;
     backdrop-filter: blur(5px);
 }
-
-.container__0f2e8 {
-    background-color: transparent !important;
-    backdrop-filter: blur(5px);
-}
+/* End of chat bar */
 
 /* Inbox */
 [class*="-recentMentionsPopout"] {
@@ -353,7 +357,7 @@ div[aria-label="Checkpoint"] {
     --toolbar-right: 75px;
 }
 
-[class*="-toolbar"] {
+[class*="-toolbar"]:not([id="slate-toolbar"]) {
     position: relative;
     right: var(--toolbar-right);
 }
