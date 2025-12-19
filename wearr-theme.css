@@ -1,0 +1,33 @@
+/**
+ * @name wearr-theme
+ * @author _wearr_
+ * @version 0.1
+ * @description it's the theme woaw
+ * @source https://github.com/wearrrrr/discord-theme
+ */
+
+    /* Main Theme CSS */
+ @import url(https://raw.githubusercontent.com/wearrrrr/discord-theme/refs/heads/main/theme.css);
+
+    /* Topbar CSS */
+ @import url(https://raw.githubusercontent.com/wearrrrr/discord-theme/refs/heads/main/topbar.css);
+
+
+:root {
+    --font-primary: "Noto Sans", sans-serif !important;
+    --font-display: "Noto Sans", sans-serif !important;
+    --font-code: "Noto Sans Mono", monospace;
+
+    /* Configuration */
+    /*  --enable-gift-button: flex; */
+    /*  --enable-app-launcher-button: flex; */
+    /*  --enable-store-button: flex; */
+    --enable-shop-button: flex;
+    --enable-quests-button: flex;
+
+    --image-url: url(https://raw.githubusercontent.com/wearrrrr/discord-theme/refs/heads/main/wallpaper.jpg);
+    --bg-transparency: rgb(0, 0, 0, 0.8);
+    --fg-transparency: rgb(0, 0, 0, 0.3);
+    --msg-transparency: rgb(0, 0, 0, 0.1);
+}
+
