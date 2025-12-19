@@ -1,0 +1,53 @@
+/* Top Bar */
+.visual-refresh {
+    --custom-app-top-bar-height: 10px !important;
+}
+
+[class*="-bar"] > [class*="-title"] {
+    display: none
+}
+
+div[class*="-sidebar"]
+    > nav[class*="-wrapper"]
+    > ul[class*="-tree"]
+    > div[class*="-itemsContainer"]
+    > div[class*="-stack"] {
+    padding-top: 12px !important;
+}
+
+[class*="sidebarList"] {
+    border-right: 2px solid var(--border-faint);
+    margin-right: 3px;
+}
+
+[class*="-base"] {
+    --toolbar-right: 40px;
+}
+
+[class*="-trailing"] {
+    top: 29px;
+    z-index: 999;
+    left: 5px;
+    a {
+        display: none;
+    }
+    gap: var(--space-4);
+}
+
+div[aria-label="Checkpoint"] {
+    display: none;
+}
+
+[class*="-base"]:has(div[aria-label="Update Ready!"]) {
+    --toolbar-right: 75px;
+}
+
+[class*="-toolbar"]:not([id="slate-toolbar"]) {
+    position: relative;
+    right: var(--toolbar-right);
+}
+
+[class*="-topic"] {
+    margin: 0px 40px 0px 8px !important;
+}
+/* End of Topbar */
