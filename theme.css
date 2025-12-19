@@ -81,7 +81,7 @@ div[class*="-content"] {
 [class*="-themedBackground"],
 [class*="-footer"],
 nav[class*="-container"],
-[class*='-banner'],
+[class*="-banner"],
 [class*="-usesCardRows"],
 [class*="-divider"] > span {
     background: transparent !important;
