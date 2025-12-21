@@ -1,29 +1,3 @@
-/**
- * @name wearr-theme
- * @author _wearr_
- * @version 0.1
- * @description it's the theme woaw
- * @source https://github.com/wearrrrr/discord-theme
- */
-
-:root {
-    --font-primary: "Noto Sans", sans-serif !important;
-    --font-display: "Noto Sans", sans-serif !important;
-    --font-code: "Noto Sans Mono", monospace;
-
-    /* Configuration */
-    /*  --enable-gift-button: flex; */
-    /*  --enable-app-launcher-button: flex; */
-    /*  --enable-store-button: flex; */
-    --enable-shop-button: flex;
-    --enable-quests-button: flex;
-
-    --image-url: url(https://raw.githubusercontent.com/wearrrrr/discord-theme/refs/heads/main/wallpaper.jpg);
-    --bg-transparency: rgb(0, 0, 0, 0.8);
-    --fg-transparency: rgb(0, 0, 0, 0.3);
-    --msg-transparency: rgb(0, 0, 0, 0.1);
-}
-
 div[aria-label="Send a gift"] {
     display: var(--enable-gift-button, none);
 }
@@ -109,7 +83,7 @@ div[class*="-content"] {
 [class*="-themedBackground"],
 [class*="-footer"],
 nav[class*="-container"],
-[class*='-banner'],
+[class*="-banner"],
 [class*="-usesCardRows"],
 [class*="-divider"] > span {
     background: transparent !important;
@@ -329,56 +303,3 @@ aside > [class*="-outer"] {
 }
 /* End of Inbox  */
 
-/* Top Bar */
-.visual-refresh {
-    --custom-app-top-bar-height: 10px !important;
-}
-
-[class*="-bar"] > [class*="-title"] {
-    display: none
-}
-
-div[class*="-sidebar"]
-    > nav[class*="-wrapper"]
-    > ul[class*="-tree"]
-    > div[class*="-itemsContainer"]
-    > div[class*="-stack"] {
-    padding-top: 12px !important;
-}
-
-[class*="sidebarList"] {
-    border-right: 2px solid var(--border-faint);
-    margin-right: 3px;
-}
-
-[class*="-base"] {
-    --toolbar-right: 40px;
-}
-
-[class*="-trailing"] {
-    top: 29px;
-    z-index: 999;
-    left: 5px;
-    a {
-        display: none;
-    }
-    gap: var(--space-4);
-}
-
-div[aria-label="Checkpoint"] {
-    display: none;
-}
-
-[class*="-base"]:has(div[aria-label="Update Ready!"]) {
-    --toolbar-right: 75px;
-}
-
-[class*="-toolbar"]:not([id="slate-toolbar"]) {
-    position: relative;
-    right: var(--toolbar-right);
-}
-
-[class*="-topic"] {
-    margin: 0px 40px 0px 8px !important;
-}
-/* End of Topbar */
