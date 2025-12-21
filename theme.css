@@ -36,6 +36,8 @@ h3[class*="-header"] {
     margin: 0;
 }
 
+
+
 [class*="-typing"] {
     background-color: var(--msg-transparency);
     backdrop-filter: blur(8px);
@@ -113,6 +115,8 @@ nav[class*="-container"],
     background: transparent !important;
 }
 
+
+
 [class*="-shopViewWrapper"] > div > main {
     background: transparent;
     div {
@@ -120,18 +124,34 @@ nav[class*="-container"],
     }
 }
 
-[class*="-card"], [class*="-root"] {
+[class*="-card"], [class*="root"]:not([class*='notification-root']) {
     background: transparent !important;
     backdrop-filter: blur(8px) brightness(80%);
+}
+
+.vc-notification-root {
+    background: var(--bg-transparency) !important;
+    backdrop-filter: blur(5px);
 }
 
 div[class*="-buttonsInner"] {
     background: var(--fg-transparency);
 }
 
+[class*="bannerButton"] {
+    background: var(--bg-transparency) !important;
+}
+
 [class*="-outer"] {
     background: var(--bg-transparency);
     backdrop-filter: blur(5px);
+}
+
+[class*="ring"]:has([class*="outer"]) {
+    [class*="outer"] {
+        background: var(--custom-status-bubble-background) !important;
+        backdrop-filter: unset !important;
+    }
 }
 
 [class*="-itemCard"] {
@@ -146,7 +166,7 @@ div[class*="-buttonsInner"] {
 div[role="tooltip"] {
     border-radius: var(--radius-md);
     span[class*="inner"] {
-        background: #151515;
+        background: var(--profile-gradient-overlay-color);;
     }
 }
 
@@ -158,7 +178,7 @@ div[aria-label="Game Collection"] {
 
 }
 
-[class*="-root"] {
+[class*="-root"]:not([class*='notification-root']) {
     background: transparent !important;
     backdrop-filter: blur(5px);
 
@@ -231,20 +251,16 @@ aside > [class*="-outer"] {
     }
 }
 
-[class*="-wrapper"]:not([class*="-pill"], [class*="-focusedVideo"], [class*="-videoWrapper"]) {
+[class*="-wrapper"]:not([class*="-pill"], [class*="-focusedVideo"], [class*="-videoWrapper"], [class*="-categoryList"], #sticker-picker-tab-panel) {
     width: var(--server-listing-width);
+    background: transparent;
 }
 
 [class*="scrollerWrap"] {
     width: calc(var(--server-listing-width) + 6px);
 }
 
-[class*="wrapper"] [class*="scroller"] {
-    display: flex;
-    flex-flow: row wrap;
-    padding-left: 0;
-    align-content: flex-start;
-}
+
 
 /*
 .wrapper_ef3116 .scroller_ef3116 {
