@@ -182,7 +182,7 @@ aside > [class*="-outer"] {
     background: transparent;
 }
 
-[class*="-app"] {
+[class*="-app"]:not([class*="-appLauncher"]) {
     background: transparent;
     background-image: var(--image-url);
     background-size: cover;
