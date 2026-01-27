@@ -1,3 +1,7 @@
+[class*="Gradient"] {
+    display: none;
+}
+
 div[aria-label="Send a gift"] {
     display: var(--enable-gift-button, none);
 }
@@ -6,13 +10,7 @@ div[aria-label="Apps"] {
     display: var(--enable-app-launcher-button, none);
 }
 
-h3[class*="-header"] {
-    margin: 0;
-}
-
-
-
-[class*="-typing"] {
+[class*="typing_"] {
     background-color: var(--msg-transparency);
     backdrop-filter: blur(8px);
     border-top-left-radius: var(--radius-md);
@@ -21,13 +19,12 @@ h3[class*="-header"] {
     border-bottom: 0px;
 }
 
-[class*="channelTextArea"],
-[class*='-form'] > div {
+[class*="channelTextArea_"] {
     background: var(--msg-transparency);
     backdrop-filter: blur(8px);
 }
 
-[class*="-form"]:has([class*="-typing"]) [class*="-channelTextArea"] {
+[class*="form_"]:has([class*="typing_"]) [class*="channelTextArea_"] {
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     border-top: 0px;
@@ -36,7 +33,7 @@ h3[class*="-header"] {
 [class*="autocomplete"] {
     background: transparent;
     backdrop-filter: blur(12px) !important;
-    [class*="-autocompleteInner"] {
+    [class*="autocompleteInner__"] {
         background: transparent;
         [class*="scroller"] {
             background-color: var(--bg-transparency);
@@ -44,13 +41,13 @@ h3[class*="-header"] {
     }
 }
 
-.visual-refresh [class*="-form"] {
+.visual-refresh [class*="form_"] {
     margin: 0px 4px 0px 1px;
     padding: 0;
     --chatbar-border-color: var(--border-faint);
 }
 
-ul[class*="-content"] {
+ul[class*="content_"] {
     li > div > a[href="/store"] {
         display: var(--enable-store-button, none);
     }
@@ -62,73 +59,58 @@ ul[class*="-content"] {
     }
 }
 
-div[class*="-content"] {
-    [class*="-text"] {
-        max-height: unset !important;
-    }
-}
-
 /*
-    All the things that need to only be transparent
-
-    Not a great thing to do, but it works.
-*/
-[class*="-shop"],
-[class*="-privateChannels"],
-[class*="-privateChannels"] > [class*="-scroller"],
-[class*="-stackedBars"],
-[class*="-guilds"],
-[class*="-sidebar"]:after,
-[class*="-themed"],
-[class*="-themedBackground"],
-[class*="-footer"],
-nav[class*="-container"],
-[class*="-banner"],
-[class*="-usesCardRows"],
-[class*="-divider"] > span {
+ *    All the things that need to only be transparent
+ *
+ *    Not a great thing to do, but it works.
+ */
+[class*="shop__"],
+[class*="privateChannels_"],
+[class*="privateChannels_"] > [class*="scroller__"],
+[class*="stackedBars__"],
+[class*="guilds__"],
+[class^="sidebar__"]:after,
+[class*="themed__"],
+[class*="themedBackground__"],
+[class*="footer__"],
+nav[class*="container__"],
+.children__9293f:after,
+.tabBody__133bf,
+.container__133bf,
+.member_c8ffbb,
+.nowPlayingColumn__133bf,
+.container__7d20c,
+.wrapper_d852db,
+.wrapper_fc8177,
+.standardSidebarView__23e6b,
+.sidebarRegionScroller__23e6b,
+.wrapper_cb9592,
+[class*="divider__"] > span {
     background: transparent !important;
 }
 
-
-
-[class*="-shopViewWrapper"] > div > main {
+[class*="shopViewWrapper__"] > div > main {
     background: transparent;
     div {
         background: transparent;
     }
 }
 
-[class*="-card"], [class*="root"]:not([class*='notification-root']) {
+.card_f215b9, [class*="root_"] {
     background: transparent !important;
     backdrop-filter: blur(8px) brightness(80%);
 }
 
-.vc-notification-root {
-    background: var(--bg-transparency) !important;
-    backdrop-filter: blur(5px);
-}
-
-div[class*="-buttonsInner"] {
+div[class*="buttonsInner__"] {
     background: var(--fg-transparency);
 }
 
-[class*="bannerButton"] {
-    background: var(--bg-transparency) !important;
-}
-
-[class*="-outer"] {
+[class*="outer_"] {
     background: var(--bg-transparency);
     backdrop-filter: blur(5px);
 }
 
-[class*="ring"]:has([class*="outer"]) {
-    [class*="outer"] {
-        background: var(--custom-status-bubble-background) !important;
-        backdrop-filter: unset !important;
-    }
-}
-
-[class*="-itemCard"] {
+[class*="itemCard__"] {
     background: transparent;
     transition: 150ms ease;
 
@@ -140,7 +122,7 @@ div[class*="-buttonsInner"] {
 div[role="tooltip"] {
     border-radius: var(--radius-md);
     span[class*="inner"] {
-        background: var(--profile-gradient-overlay-color);;
+        background: #151515;
     }
 }
 
@@ -152,24 +134,24 @@ div[aria-label="Game Collection"] {
 
 }
 
-[class*="-root"]:not([class*='notification-root']) {
+[class*="root__"] {
     background: transparent !important;
     backdrop-filter: blur(5px);
 
-    [class^="-outer"] {
+    [class^="outer_"] {
         background: transparent !important;
 
         [class^="container"] {
             background: transparent !important;
         }
 
-        [class^="-profile"] {
+        [class^="profile__"] {
             background: var(--fg-transparency);
         }
     }
 }
 
-aside > [class*="-outer"] {
+aside > [class*="outer_"] {
     background: transparent;
     backdrop-filter: blur(8px);
     border: 1px solid var(--app-border-frame);
@@ -182,29 +164,26 @@ aside > [class*="-outer"] {
     background: transparent;
 }
 
-[class*="-app"]:not([class*="-appLauncher"]) {
+[class^="app__"] {
     background: transparent;
     background-image: var(--image-url);
     background-size: cover;
 }
 
-[class*="-bg"] {
+[class^="bg__"] {
     background: var(--bg-transparency);
 }
 
-[class*="-lineClamp1"] {
-    margin: 0;
-}
-
 /* User info panel */
-[class*="-panels"] {
+[class^="panels_"] {
     background: transparent;
     backdrop-filter: blur(8px) brightness(80%);
 }
 
 [class*="chat"] {
     background: transparent !important;
-    [class*="-container"]:has([class*="-membersWrap"]) {
+
+    [class*="container_"]:has([class*="membersWrap_"]) {
         background: transparent !important;
         border: 1px solid var(--border-subtle);
         border-right: 0px;
@@ -217,69 +196,69 @@ aside > [class*="-outer"] {
         margin-top: 1%;
         backdrop-filter: blur(8px) brightness(80%);
     }
-    [class*="-members"] {        background: transparent !important;
-    }
-    [class*="-member"] {
+
+    [class*="members_"] {
         background: transparent !important;
-        margin-bottom: 3px;
     }
 }
 
-[class*="-wrapper"]:not([class*="-pill"], [class*="-focusedVideo"], [class*="-videoWrapper"], [class*="-categoryList"], #sticker-picker-tab-panel) {
+.wrapper_ef3116 {
     width: var(--server-listing-width);
-    background: transparent;
 }
 
-[class*="scrollerWrap"] {
+.scrollerWrap-1IAIlv {
     width: calc(var(--server-listing-width) + 6px);
 }
 
+.wrapper_ef3116 .scroller_ef3116 {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 0;
+    align-content: flex-start;
+}
 
+.tutorialContainer__1f388
+.wrapper_cc5dd2
+.wrapper__6e9f8
+.childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
+    background-color: var(--fg-transparency);
+    backdrop-filter: brightness(20%);
+}
 
-/*
 .wrapper_ef3116 .scroller_ef3116 {
     justify-content: center;
-}*/
+}
 
 #channel-attach {
-    background: var(--bg-transparency);
-    backdrop-filter: blur(8px);
+background: var(--bg-transparency);
+backdrop-filter: blur(8px);
 }
 
-[class*="-noChat"] {
-    [class*="-callContainer"] {
-        background: transparent;
-    }
-    background: transparent;
-}
-
-
-
-/* Chat bar */
-[class*="-channelAttachmentArea"] {
+[class*="channelAttachmentArea_"] {
     background-color: transparent !important;
 }
 
-[class*="-upload"] {
+[class*="upload_"] {
     background-color: transparent !important;
 }
 
-[class*="-actionBar"] {
-    [class*="wrapper"] {
-        background: var(--fg-transparency);
-        backdrop-filter: blur(8px);
-    }
-}
-
-[class*="-embedFull"] {
+.embedFull__623de {
     background-color: transparent !important;
     backdrop-filter: blur(5px);
 }
-/* End of chat bar */
+
+.textContainer__4d95d {
+    backdrop-filter: blur(15px) !important;
+}
+
+.container__0f2e8 {
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+}
 
 /* Inbox */
-[class*="-recentMentionsPopout"] {
-    [class*="-header"]:not([aria-labelledby]) {
+[class*="recentMentionsPopout__"] {
+    [class*="header_"]:not([aria-labelledby]) {
         background-color: var(--fg-transparency) !important;
     }
     [class*="channel"] {
@@ -292,8 +271,8 @@ aside > [class*="-outer"] {
         background-color: transparent !important;
         position: relative;
     }
-    [class*="-messageContainer"],
-    [class*="-messages"] {
+    [class^="messageContainer"],
+    [class*="messages__"] {
         background: transparent;
     }
     background-color: var(--fg-transparency) !important;
@@ -302,4 +281,3 @@ aside > [class*="-outer"] {
     box-shadow: none;
 }
 /* End of Inbox  */
-

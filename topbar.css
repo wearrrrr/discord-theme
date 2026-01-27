@@ -3,15 +3,15 @@
     --custom-app-top-bar-height: 10px !important;
 }
 
-[class*="-bar"] > [class*="-title"] {
+[class*="bar_"] > [class*="title_"] {
     display: none
 }
 
-div[class*="-sidebar"]
-    > nav[class*="-wrapper"]
-    > ul[class*="-tree"]
-    > div[class*="-itemsContainer"]
-    > div[class*="-stack"] {
+div[class^="sidebar_"]
+> nav[class^="wrapper_"]
+> ul[class^="tree_"]
+> div[class^="itemsContainer_"]
+> div[class^="stack_"] {
     padding-top: 12px !important;
 }
 
@@ -20,12 +20,12 @@ div[class*="-sidebar"]
     margin-right: 3px;
 }
 
-[class*="-base"] {
+[class*="base__"] {
     --toolbar-right: 40px;
 }
 
-[class*="-trailing"] {
-    top: 29px;
+[class^="trailing_"] {
+    top: 28px;
     z-index: 999;
     left: 5px;
     a {
@@ -38,16 +38,16 @@ div[aria-label="Checkpoint"] {
     display: none;
 }
 
-[class*="-base"]:has(div[aria-label="Update Ready!"]) {
+[class*="base__"]:has(div[aria-label="Update Ready!"]) {
     --toolbar-right: 75px;
 }
 
-[class*="-toolbar"]:not([id="slate-toolbar"]) {
+[class^="toolbar__"] {
     position: relative;
     right: var(--toolbar-right);
 }
 
-[class*="-topic"] {
+[class^="topic__"] {
     margin: 0px 40px 0px 8px !important;
 }
 /* End of Topbar */
