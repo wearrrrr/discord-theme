@@ -2,6 +2,11 @@
     display: none;
 }
 
+/* stupid chud discord */
+[class*="username_"] {
+    display: inline !important; 
+}
+
 div[aria-label="Send a gift"] {
     display: var(--enable-gift-button, none);
 }
